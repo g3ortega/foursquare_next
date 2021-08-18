@@ -15,17 +15,16 @@ Ruby wrapper for the [foursquare v2 API](http://developer.foursquare.com/docs/).
 
 Currently this gem does not handle the oauth2 authentication flow for you, use the [oauth2 gem](https://github.com/intridea/oauth2) to retrieve and store oauth tokens for a user.  Obtain your client key/secret for userless access at the [foursquare developer site.](https://foursquare.com/oauth/)
 
+
+## Note
+    The Foursquare API no longer supports requests that do not pass in a version parameter. For more details see [here](https://developer.foursquare.com/overview/versioning). Also take in consideration that the Foursquare API no longer supports requests that pass in a version v <= 20120609.
 ### Instantiate a client (Userless Access)
 
-    client = FoursquareNext::Client.new(client_id: 'your_client_id', client_secret: 'your_secret')
+    client = FoursquareNext::Client.new(client_id: 'your_client_id', client_secret: 'your_secret', version: '20210505')
 
 ### Instantiate a client (Authenticated User Access)
 
-    client = FoursquareNext::Client.new(oauth_token: 'user_oauth_token')
-
-### Instantiate a client (With versioning)
-
-    client = FoursquareNext::Client.new(api_version: '20120505')
+    client = FoursquareNext::Client.new(oauth_token: 'user_oauth_token', api_version: '20210505')
 
 ### Examples
 
