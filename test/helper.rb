@@ -14,7 +14,8 @@ require "fakeweb"
 require "json"
 # require 'hashie'
 require "awesome_print"
-require "mocha/setup"
+require "mocha/minitest"
+require "mocha/test_unit"
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
 $LOAD_PATH.unshift(File.dirname(__FILE__))

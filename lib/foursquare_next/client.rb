@@ -9,6 +9,11 @@ module FoursquareNext
       FaradayMiddleware::ParseJson
     ].freeze
 
+    DEFAULT_HEADERS = {
+      accept:  'application/json',
+      user_agent: 'Ruby gem'
+    }
+
     extend Forwardable
 
     include Venues
@@ -62,7 +67,7 @@ module FoursquareNext
       params[:oauth_token] = @oauth_token if @oauth_token
       params[:v] = @api_version if @api_version
       params[:locale] = @locale if @locale
-      @connection ||= Faraday::Connection.new(:url => api_url, :ssl => @ssl, :params => params, :headers => default_headers) do |builder|
+      @connection ||= Faraday::Connection.new(:url => api_url, :ssl => @ssl, :params => params, :headers => DEFAULT_HEADERS) do |builder|
         @connection_middleware.each do |middleware|
           builder.use *middleware
         end
@@ -87,16 +92,5 @@ module FoursquareNext
         raise FoursquareNext::APIError.new(response.body['meta'], response.body['response'])
       end
     end
-
-    private
-
-
-    def default_headers
-      headers = {
-        :accept =>  'application/json',
-        :user_agent => 'Ruby gem'
-      }
-    end
-
   end
 end
