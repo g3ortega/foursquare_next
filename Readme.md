@@ -17,7 +17,9 @@ Currently this gem does not handle the oauth2 authentication flow for you, use t
 
 
 ## Note
-    The Foursquare API no longer supports requests that do not pass in a version parameter. For more details see [here](https://developer.foursquare.com/overview/versioning). Also take in consideration that the Foursquare API no longer supports requests that pass in a version v <= 20120609.
+
+The Foursquare API no longer supports requests that do not pass in a version parameter. For more details see [here](https://developer.foursquare.com/overview/versioning). Also take in consideration that the Foursquare API no longer supports requests that pass in a version v <= 20120609.
+
 ### Instantiate a client (Userless Access)
 
     client = FoursquareNext::Client.new(client_id: 'your_client_id', client_secret: 'your_secret', version: '20210505')
