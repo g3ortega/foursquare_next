@@ -1,4 +1,4 @@
-module Foursquare2
+module FoursquareNext
   module Specials
     # Retrieve information about a special
     #

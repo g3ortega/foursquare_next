@@ -183,7 +183,7 @@ class TestVenues < Test::Unit::TestCase
       should "raise a 'not authorized' API error" do
         stub_get("https://api.foursquare.com/v2/venues/4ad4c04af964a52065f220e3/stats?oauth_token=#{@client.oauth_token}", nil,
           :error => { :code => "403", :type => "not_authorized", :message => "User is not authorized to view venue stats" })
-        assert_raises(Foursquare2::APIError) do
+        assert_raises(FoursquareNext::APIError) do
           @client.managed_venue_stats("4ad4c04af964a52065f220e3")
         end
       end

@@ -1,13 +1,13 @@
-# foursquare2
+# foursquare_next
 
-[![Build Status](https://travis-ci.org/mattmueller/foursquare2.svg?branch=master)](https://travis-ci.org/smattmueller/foursquare2)
-[![Coverage Status](https://coveralls.io/repos/github/mattmueller/foursquare2/badge.svg?branch=master)](https://coveralls.io/github/mattmueller/foursquare2?branch=master)
+[![Build Status](https://travis-ci.org/g3ortega/foursquare_next.svg?branch=master)](https://travis-ci.org/smattmueller/foursquare_next)
+[![Coverage Status](https://coveralls.io/repos/github/g3ortega/foursquare_next/badge.svg?branch=master)](https://coveralls.io/github/g3ortega/foursquare_next?branch=master)
 
 Ruby wrapper for the [foursquare v2 API](http://developer.foursquare.com/docs/).
 
 ## Installation
 
-    sudo gem install foursquare2
+    gem install foursquare_next
 
 ## Usage
 
@@ -17,19 +17,19 @@ Currently this gem does not handle the oauth2 authentication flow for you, use t
 
 ### Instantiate a client (Userless Access)
 
-    client = Foursquare2::Client.new(:client_id => 'your_client_id', :client_secret => 'your_secret')
+    client = FoursquareNext::Client.new(client_id: 'your_client_id', client_secret: 'your_secret')
 
 ### Instantiate a client (Authenticated User Access)
 
-    client = Foursquare2::Client.new(:oauth_token => 'user_oauth_token')
+    client = FoursquareNext::Client.new(oauth_token: 'user_oauth_token')
 
 ### Instantiate a client (With versioning)
 
-    client = Foursquare2::Client.new(:api_version => '20120505')
+    client = FoursquareNext::Client.new(api_version: '20120505')
 
 ### Examples
 
-See [the documentation](http://rubydoc.info/gems/foursquare2/frames) for a list of all supported methods and available options.
+See [the documentation](http://rubydoc.info/gems/foursquare_next/frames) for a list of all supported methods and available options.
 
 #### Get information about a user (use 'self' for the authenticated user)
 
@@ -41,35 +41,32 @@ See [the documentation](http://rubydoc.info/gems/foursquare2/frames) for a list 
 
 #### Search for venues
 
-    client.search_venues(:ll => '36.142064,-86.816086', :query => 'Starbucks')
+    client.search_venues(ll: '36.142064,-86.816086', query: 'Starbucks')
 
 #### Check-in to a venue as the authenticated user
 
-    client.add_checkin(:venueId => "4b2afcaaf964a5205bb324e3", :broadcast => 'public', :ll => '36.142064,-86.816086', :shout => 'zomg coffee!1!')
+    client.add_checkin(venueId: "4b2afcaaf964a5205bb324e3", broadcast: 'public', ll: '36.142064,-86.816086', shout: 'zomg coffee!1!')
 
 
 #### Search user by tip
 
-     client.search_users_by_tip(:ll => '36.142064,-86.816086', :name => 'Marco')
+     client.search_users_by_tip(ll: '36.142064,-86.816086', name: 'Marco')
 
 #### Search tips from a user (optionally filter a user's tips based on some term)
 
-     client.user_tips("123456", :query => 'coffee')
+     client.user_tips("123456", query: 'coffee')
 
 #### Search venues by tip
 
-     client.search_venues_by_tip(:ll => '36.142064,-86.816086', :query => 'coffee')
+     client.search_venues_by_tip(ll: '36.142064,-86.816086', query: 'coffee')
 
 #### Search tips at a venue (optionally filter a venue's tips based on some term)
 
-     client.venue_tips("4b2afcaaf964a5205bb324e3", :query => 'coffee')
-
-
-
+     client.venue_tips("4b2afcaaf964a5205bb324e3", query: 'coffee')
 
 ## Full list of methods
 
-See [the documentation](http://rubydoc.info/gems/foursquare2/frames) or [foursquare's endpoint list](http://developer.foursquare.com/docs/index_docs.html) for parameters.
+See [the documentation](http://rubydoc.info/gems/foursquare_next/frames) or [foursquare's endpoint list](http://developer.foursquare.com/docs/index_docs.html) for parameters.
 
     client.checkin
     client.recent_checkins
@@ -136,7 +133,7 @@ See [the documentation](http://rubydoc.info/gems/foursquare2/frames) or [foursqu
 * More test coverage
 * Integrate oauth2 authentication flow
 
-## Contributing to foursquare2
+## Contributing to foursquare_next
 
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
@@ -148,4 +145,4 @@ See [the documentation](http://rubydoc.info/gems/foursquare2/frames) or [foursqu
 
 ## Copyright
 
-Copyright (c) 2011 Matt Mueller. See LICENSE.txt for further details.
+Copyright (c) 2021 Matt Mueller & Gerardo Ortega. See LICENSE.txt for further details.

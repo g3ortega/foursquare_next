@@ -4,12 +4,12 @@
 # -*- encoding: utf-8 -*-
 
 Gem::Specification.new do |s|
-  s.name = "foursquare2"
-  s.version = "2.0.2"
+  s.name = "foursquare_next"
+  s.version = "0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Matt Mueller", "Marco Moura", "Gerardo Ortega"]
-  s.date = "2018-11-11"
+  s.date = "2021-09-15"
   s.description = "Gives access to all endpoints in version 2 of foursquare's API with syntax that will be familiar to those who used the original foursquare gem by Jeremy Welch."
   s.email = %w(muellermr@gmail.com email@marcomoura.com g3ortega@gmail.com)
   s.extra_rdoc_files = [
@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   ]
   s.files = `git ls-files`.split("\n")
   s.test_files = `git ls-files -- {test}/*`.split("\n")
-  s.homepage = "http://github.com/mattmueller/foursquare2"
+  s.homepage = "http://github.com/g3ortega/foursquare_next"
   s.licenses = ["MIT"]
   s.require_paths = ["lib"]
   s.rubygems_version = "1.8.23"
@@ -36,5 +36,4 @@ Gem::Specification.new do |s|
   s.add_development_dependency("test-unit", ["~> 3.0"])
   s.add_development_dependency("jnunemaker-matchy", [">= 0"])
   s.add_development_dependency("mocha", [">= 0"])
-
 end

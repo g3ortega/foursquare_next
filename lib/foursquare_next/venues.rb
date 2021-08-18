@@ -1,4 +1,4 @@
-module Foursquare2
+module FoursquareNext
   module Venues
 
     # Retrieve information about a venue

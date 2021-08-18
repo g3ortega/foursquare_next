@@ -1,4 +1,4 @@
-module Foursquare2
+module FoursquareNext
   module Settings
     # Retrive all settings for the authenticated user.
 

@@ -1,4 +1,4 @@
-module Foursquare2
+module FoursquareNext
   module Lists
 
     # Retrieve information about a list.

@@ -1,4 +1,4 @@
-module Foursquare2
+module FoursquareNext
   module Users
     # Get user's leaderboard details
     #
@@ -128,7 +128,7 @@ module Foursquare2
         req.url "users/#{user_id}/tips", options
       end
       tips = return_error_or_body(response, response.body.response.tips)
-      tips = Foursquare2.filter(tips, options[:query]) if options.has_key? :query
+      tips = FoursquareNext.filter(tips, options[:query]) if options.has_key? :query
       tips
     end
 

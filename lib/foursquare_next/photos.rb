@@ -1,4 +1,4 @@
-module Foursquare2
+module FoursquareNext
   module Photos
     # Retrieve a photo
     #

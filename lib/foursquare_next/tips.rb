@@ -1,4 +1,4 @@
-module Foursquare2
+module FoursquareNext
   module Tips
     # Retrieve information about a tip.
     #
@@ -42,7 +42,7 @@ module Foursquare2
         req.url "venues/#{venue_id}/tips", options
       end
       tips = return_error_or_body(response, response.body.response.tips)
-      tips = Foursquare2.filter(tips, query) if query
+      tips = FoursquareNext.filter(tips, query) if query
       tips
     end
 

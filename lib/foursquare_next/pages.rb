@@ -1,4 +1,4 @@
-module Foursquare2
+module FoursquareNext
   module Pages
 
     # Get information about a page.
@@ -43,7 +43,7 @@ module Foursquare2
         req.url "pages/#{page_id}/venues", options
       end
       venues = return_error_or_body(response, response.body.response.venues)
-      venues = Foursquare2.filter(venues, options[:query]) if options.has_key? :query
+      venues = foursquare_next.filter(venues, options[:query]) if options.has_key? :query
       venues
     end
 

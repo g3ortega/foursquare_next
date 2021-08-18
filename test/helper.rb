@@ -18,13 +18,13 @@ require "mocha/setup"
 
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
 $LOAD_PATH.unshift(File.dirname(__FILE__))
-require "foursquare2"
+require "foursquare_next"
 require "config"
 
 FakeWeb.allow_net_connect = false
 
 def foursquare_test_client
-  Foursquare2::Client.new(:oauth_token => "yeehaw")
+  FoursquareNext::Client.new(:oauth_token => "yeehaw")
 end
 
 def foursquare_url(url)
@@ -38,7 +38,7 @@ def fixture_file(filename, options={})
 
   case File.extname(file_path)
   when ".json"
-    options[:parse] ? Foursquare2::HashWrapper.new(JSON.parse(fixture)) : fixture
+    options[:parse] ? FoursquareNext::HashWrapper.new(JSON.parse(fixture)) : fixture
   else
     fixture
   end

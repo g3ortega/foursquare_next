@@ -1,11 +1,11 @@
 require 'forwardable'
 
-module Foursquare2
+module FoursquareNext
   class Client
     DEFAULT_CONNECTION_MIDDLEWARE = [
       Faraday::Request::Multipart,
       Faraday::Request::UrlEncoded,
-      Foursquare2::MashifyWrapper,
+      FoursquareNext::MashifyWrapper,
       FaradayMiddleware::ParseJson
     ].freeze
 
@@ -39,13 +39,13 @@ module Foursquare2
     # @option options Hash   :ssl Additional SSL options (like the path to certificate file)
 
     def initialize(options={})
-      @client_id = options[:client_id] || Foursquare2.client_id
-      @client_secret = options[:client_secret] || Foursquare2.client_secret
+      @client_id = options[:client_id] || FoursquareNext.client_id
+      @client_secret = options[:client_secret] || FoursquareNext.client_secret
       @oauth_token = options[:oauth_token]
-      @api_version = options[:api_version] || Foursquare2.api_version
-      @locale = options[:locale] || Foursquare2.locale
-      @ssl = options[:ssl] || Foursquare2.ssl || Hash.new
-      @connection_middleware = options[:connection_middleware] || Foursquare2.connection_middleware || []
+      @api_version = options[:api_version] || FoursquareNext.api_version
+      @locale = options[:locale] || FoursquareNext.locale
+      @ssl = options[:ssl] || FoursquareNext.ssl || Hash.new
+      @connection_middleware = options[:connection_middleware] || FoursquareNext.connection_middleware || []
       @connection_middleware += DEFAULT_CONNECTION_MIDDLEWARE
     end
 
@@ -84,7 +84,7 @@ module Foursquare2
       if response.body['meta'].code == 200
         response_body
       else
-        raise Foursquare2::APIError.new(response.body['meta'], response.body['response'])
+        raise FoursquareNext::APIError.new(response.body['meta'], response.body['response'])
       end
     end
 

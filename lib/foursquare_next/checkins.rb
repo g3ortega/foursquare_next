@@ -1,4 +1,4 @@
-module Foursquare2
+module FoursquareNext
   module Checkins
 
     # Retrieve information about a single checkin.
@@ -104,4 +104,3 @@ module Foursquare2
     end
   end
 end
-

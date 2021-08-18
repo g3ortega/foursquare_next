@@ -1,4 +1,4 @@
-module Foursquare2
+module FoursquareNext
   module Campaigns
     # Retrieve information about a campaign
     #
