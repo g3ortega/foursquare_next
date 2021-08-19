@@ -1,6 +1,6 @@
 # foursquare_next
 
-[![Build Status](https://travis-ci.org/g3ortega/foursquare_next.svg?branch=master)](https://travis-ci.org/smattmueller/foursquare_next)
+[![Build Status](https://travis-ci.org/g3ortega/foursquare_next.svg?branch=master)](https://travis-ci.org/g3ortega/foursquare_next)
 [![Coverage Status](https://coveralls.io/repos/github/g3ortega/foursquare_next/badge.svg?branch=master)](https://coveralls.io/github/g3ortega/foursquare_next?branch=master)
 
 Ruby wrapper for the [foursquare v2 API](http://developer.foursquare.com/docs/).
